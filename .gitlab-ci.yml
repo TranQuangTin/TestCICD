@@ -10,9 +10,7 @@ build:
 
  script:
 
-   - dotnet restore
+   - echo &quot;$SSH_PRIVATE_KEY&quot; | tr -d &#39;\r&#39; | ssh-add - &gt; /dev/null
 
-   - dotnet build
-
- only:
+ only: 
    - master
